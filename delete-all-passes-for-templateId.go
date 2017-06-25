@@ -140,9 +140,9 @@ func printResponses(finish chan<- bool, responses <-chan requestResult, count in
 		if res.e != nil {
 			fmt.Println(res.e)
 		} else {
-			deletePass := GetPass{}
+			deletePass := DeletePass{}
 			json.Unmarshal(res.p, &deletePass)
-			fmt.Println("Deleted PassId: " + deletePass.ID)
+			fmt.Println("Deleted PassId: " + deletePass.PassID)
 		}
 	}
 	finish <- true
